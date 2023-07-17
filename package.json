@@ -1,0 +1,22 @@
+{
+  "name": "latest-browsers",
+  "version": "0.1.0",
+  "description": "JavaScript (TypeScript) library to get the latest browser versions and download links.",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ReekyStive",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.6"
+  }
+}
