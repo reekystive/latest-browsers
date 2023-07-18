@@ -1,15 +1,36 @@
 {
   "name": "latest-browsers",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "JavaScript (TypeScript) library to get the latest browser versions and download links.",
+  "keywords": [
+    "browser",
+    "version",
+    "chrome",
+    "firefox",
+    "edge"
+  ],
+  "homepage": "https://github.com/reekystive/latest-browsers",
+  "bugs": {
+    "url": "https://github.com/reekystive/latest-browsers/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reekystive/latest-browsers.git"
+  },
+  "license": "MIT",
+  "author": "ReekyStive",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "lint": "eslint .",
+    "build": "tsc",
+    "format": "prettier --write src",
+    "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "ReekyStive",
-  "license": "MIT",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -18,5 +39,6 @@
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.0",
     "typescript": "^5.1.6"
-  }
+  },
+  "packageManager": "pnpm@8.6.3"
 }

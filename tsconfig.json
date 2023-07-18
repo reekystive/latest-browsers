@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "nodenext",
+    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "outDir": "dist",
     "skipLibCheck": true,
-    "moduleResolution": "nodenext"
-  }
+    "sourceMap": true,
+    "sourceRoot": "src",
+    "strict": true,
+    "target": "esnext"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts"]
 }
