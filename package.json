@@ -1,6 +1,6 @@
 {
   "name": "latest-browsers",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "JavaScript (TypeScript) library to get the latest browser versions and download links.",
   "keywords": [
     "browser",
