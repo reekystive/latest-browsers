@@ -1,4 +1,4 @@
-import { ChromeChannel, Platform, VersionInfo } from './types.js';
+import { Channel, Platform, VersionInfo } from './types.js';
 
 const platformMap: Record<Platform, string> = {
   macos: 'Mac',
@@ -6,14 +6,14 @@ const platformMap: Record<Platform, string> = {
   linux: 'Linux',
 };
 
-const channelMap: Record<ChromeChannel, string> = {
+const channelMap: Record<Channel<'chrome'>, string> = {
   stable: 'Stable',
   beta: 'Beta',
   dev: 'Dev',
   canary: 'Canary',
 };
 
-const downloadLinkMap: Record<Platform, Record<ChromeChannel, string>> = {
+const downloadLinkMap: Record<Platform, Record<Channel<'chrome'>, string>> = {
   macos: {
     stable: 'https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg',
     beta: 'https://dl.google.com/chrome/mac/universal/beta/googlechromebeta.dmg',
@@ -34,14 +34,14 @@ const downloadLinkMap: Record<Platform, Record<ChromeChannel, string>> = {
   },
 };
 
-async function fetchLatestChrome(platform: Platform, channel: ChromeChannel): Promise<VersionInfo<'chrome'>> {
+async function fetchLatestChrome(platform: Platform, channel: Channel<'chrome'>): Promise<VersionInfo<'chrome'>> {
   if (platform === 'linux' && channel === 'canary') {
     throw new Error('Chrome Canary is not available on Linux');
   }
   const url = `https://chromiumdash.appspot.com/fetch_releases?channel=${channelMap[channel]}&platform=${platformMap[platform]}&num=1&offset=0`;
   const response = await fetch(url);
   type Response = {
-    channel: ChromeChannel;
+    channel: Channel<'chrome'>;
     chromium_main_branch_position: number;
     hashes: Record<string, string>;
     milestone: number;

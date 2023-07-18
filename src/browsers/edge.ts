@@ -1,7 +1,7 @@
-import { EdgeChannel, Platform, VersionInfo } from './types.js';
+import { Channel, Platform, VersionInfo } from './types.js';
 import { getLastModified } from './utils.js';
 
-const linkMap: Record<Platform, Record<EdgeChannel, string>> = {
+const linkMap: Record<Platform, Record<Channel<'edge'>, string>> = {
   macos: {
     stable: 'https://go.microsoft.com/fwlink/?linkid=2093504',
     beta: 'https://go.microsoft.com/fwlink/?linkid=2099618',
@@ -22,7 +22,7 @@ const linkMap: Record<Platform, Record<EdgeChannel, string>> = {
   },
 };
 
-async function fetchWindows(channel: EdgeChannel): Promise<VersionInfo<'edge'>> {
+async function fetchWindows(channel: Channel<'edge'>): Promise<VersionInfo<'edge'>> {
   const url = 'https://www.microsoft.com/en-us/edge/business/download?form=MA13FJ';
   const response = await fetch(url);
   const body = await response.text();
@@ -71,7 +71,7 @@ async function fetchWindows(channel: EdgeChannel): Promise<VersionInfo<'edge'>> 
   };
 }
 
-async function fetchLatestEdge(platform: Platform, channel: EdgeChannel): Promise<VersionInfo<'edge'>> {
+async function fetchLatestEdge(platform: Platform, channel: Channel<'edge'>): Promise<VersionInfo<'edge'>> {
   if (platform === 'linux' && channel === 'canary') {
     throw new Error('Edge Canary is not available on Linux');
   }

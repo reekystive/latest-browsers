@@ -1,9 +1,9 @@
 export type Browser = 'chrome' | 'firefox' | 'edge';
 export type Platform = 'macos' | 'windows' | 'linux';
 
-export type ChromeChannel = 'stable' | 'beta' | 'dev' | 'canary';
-export type FirefoxChannel = 'stable' | 'beta' | 'dev' | 'nightly';
-export type EdgeChannel = 'stable' | 'beta' | 'dev' | 'canary';
+type ChromeChannel = 'stable' | 'beta' | 'dev' | 'canary';
+type FirefoxChannel = 'stable' | 'beta' | 'dev' | 'nightly';
+type EdgeChannel = 'stable' | 'beta' | 'dev' | 'canary';
 
 type ChannelMap = {
   chrome: ChromeChannel;

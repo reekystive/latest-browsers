@@ -1,4 +1,4 @@
-import { FirefoxChannel, Platform, VersionInfo } from './types.js';
+import { Channel, Platform, VersionInfo } from './types.js';
 import { getLastModified } from './utils.js';
 
 const platformMap: Record<Platform, string> = {
@@ -7,14 +7,14 @@ const platformMap: Record<Platform, string> = {
   linux: 'linux',
 };
 
-const channelMap: Record<FirefoxChannel, string> = {
+const channelMap: Record<Channel<'firefox'>, string> = {
   stable: 'firefox-latest-ssl',
   beta: 'firefox-beta-latest-ssl',
   dev: 'firefox-devedition-latest-ssl',
   nightly: 'firefox-nightly-latest-ssl',
 };
 
-async function fetchLatestFirefox(platform: Platform, channel: FirefoxChannel): Promise<VersionInfo<'firefox'>> {
+async function fetchLatestFirefox(platform: Platform, channel: Channel<'firefox'>): Promise<VersionInfo<'firefox'>> {
   const url = `https://download.mozilla.org/?product=${channelMap[channel]}&os=${platformMap[platform]}&lang=en-US`;
   const response = await fetch(url, { redirect: 'manual' });
   const downloadLink = response.headers.get('location');
