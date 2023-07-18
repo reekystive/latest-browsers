@@ -1,5 +1,6 @@
 import { Channel, Platform, VersionInfo } from './types.js';
 import { getLastModified } from './utils.js';
+import fetch from 'node-fetch';
 
 const platformMap: Record<Platform, string> = {
   macos: 'osx',
