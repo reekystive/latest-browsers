@@ -4,6 +4,13 @@ JavaScript (TypeScript) library to get the latest browser versions and download 
 
 ## Usage
 
+```shell
+$ npm install latest-browsers
+# or
+$ yarn add latest-browsers
+$ pnpm add latest-browsers
+```
+
 ```ts
 import { fetchLatest } from 'latest-browsers';
 
