@@ -10,6 +10,7 @@
     "sourceMap": true,
     "sourceRoot": "src",
     "strict": true,
+    "lib": ["esnext"],
     "target": "esnext",
     "paths": {
       "@/*": ["./src/*"]

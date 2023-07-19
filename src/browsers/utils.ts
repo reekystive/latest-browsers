@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 export async function getLastModified(url: string): Promise<Date> {
   const abortController = new AbortController();
   const signal = abortController.signal;
