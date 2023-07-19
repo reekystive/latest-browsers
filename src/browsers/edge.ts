@@ -1,6 +1,6 @@
 import { Channel, Platform, VersionInfo } from './types.js';
-import { getLastModified } from './utils.js';
-import fetch from 'node-fetch';
+import { getLastModified } from '../utils/utils.js';
+import fetch from '../utils/fetch.js';
 
 const linkMap: Record<Platform, Record<Channel<'edge'>, string>> = {
   macos: {

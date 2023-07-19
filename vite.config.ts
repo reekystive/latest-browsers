@@ -8,5 +8,6 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
     retry: 3,
+    testTimeout: 10000,
   },
 });

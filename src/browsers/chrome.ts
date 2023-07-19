@@ -1,5 +1,5 @@
 import { Channel, Platform, VersionInfo } from './types.js';
-import fetch from 'node-fetch';
+import fetch from '../utils/fetch.js';
 
 const platformMap: Record<Platform, string> = {
   macos: 'Mac',

@@ -11,10 +11,7 @@
     "sourceRoot": "src",
     "strict": true,
     "lib": ["esnext"],
-    "target": "esnext",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "target": "esnext"
   },
   "exclude": ["node_modules"],
   "include": ["src/**/*.ts"]
